@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ProductsList from "./ProductsList";
 
 function App() {
+
+  const productsData = [
+    {
+      id: 1,
+      name: "Smartphone",
+      price: "$699",
+      description: "A high-quality smartphone with excellent camera.",
+      reviews: [
+        { id: 101, user: "Ali", comment: "Amazing phone!", rating: 5 },
+        { id: 102, user: "Sara", comment: "Good value for money.", rating: 4 },
+      ],
+    },
+    {
+      id: 2,
+      name: "Laptop",
+      price: "$999",
+      description: "Powerful laptop for professional work.",
+      reviews: [
+        { id: 201, user: "Ahmed", comment: "Performance is top-notch!", rating: 5 },
+        { id: 202, user: "Maria", comment: "Battery life could be better.", rating: 3 },
+      ],
+    },
+  ];
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Product Catalog</h1>
+      <ProductsList products={productsData} />
     </div>
   );
 }
